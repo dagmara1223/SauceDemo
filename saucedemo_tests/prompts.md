@@ -8,5 +8,5 @@ strategy, not an implementation. Which three test would You recommend to use on 
 finalize payments? We also have hamburger left-slide as feature, we can sort the products by the Name or Price, and we are provided with List of accepted
 usernames to LogIn and usernames that were blocked / excluded."    
 **Response**: AI Agent pointed out that we should focus on mentioned : 1. login trap, 2. create full flow: logging -> adding items (preferably 2+) -> cart -> summary 
--> payment / acceptance and 3. logout test.   
+-> payment / acceptance and 3. hamburger slide.   
 **My Decision**: I accepted two provided examples: 1. and 2. but decided to go with product sorting check as 3. 
