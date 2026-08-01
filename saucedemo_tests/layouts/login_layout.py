@@ -23,13 +23,13 @@ class LoginPage(BasePage):
         return self.page.get_by_test_id("login-button")
 
     def open(self) -> "LoginPage":
-        "open the login page and wait till its ready."
+        """open the login page and wait till its ready."""
         self.page.goto(self.url)
         expect(self.login_button).to_be_visible()
         return self
 
     def login(self, username: str, password:str) -> "LoginPage":
-        "Login using the provided username and password"
+        """Login using the provided username and password"""
         self.username.fill(username)
         self.password.fill(password)
         self.login_button.click()
