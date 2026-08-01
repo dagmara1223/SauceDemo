@@ -19,3 +19,9 @@ created our first Login page + tests. Please suggest a maintainable project infr
 also decided not to proceed with storage_state idea since this specific task requires only
 three tests, performing a fresh login in each relevant test adds execution time and code
 becomes more complex.
+
+## Step
+**Propmt**: "Test login negative fail after the initial implementation. Help me identify the root cause - why is it failing? Explain what should be verified first and whether the problem seems to be correlated to bug in test or rather login page.
+**Response**: AI Agent suggested path that helped me with the debugging. It identified several possible causes, including incorrect page locators, project import structure, inconsistent naming introduced during refactoring (URL vs url) and finally incorrect expected assertion values.
+**My Decision/Resolution**: The issue was, in fact, correlated to misspeling "url" and using 
+"URL" everywhere, and also some other minor bugs like using non-relevant functions that work with my version of playwright. After that - all 3 passed.
