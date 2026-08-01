@@ -10,3 +10,12 @@ usernames to LogIn and usernames that were blocked / excluded."
 **Response**: AI Agent pointed out that we should focus on mentioned : 1. login trap, 2. create full flow: logging -> adding items (preferably 2+) -> cart -> summary 
 -> payment / acceptance and 3. hamburger slide.   
 **My Decision**: I accepted two provided examples: 1. and 2. but decided to go with product sorting check as 3. and describe lack of Slide Menu tests in **approach.md**. (link)
+
+## Step 
+**Prompt**: "I have created the BasePage class from which all page objects inherit. I also 
+created our first Login page + tests. Please suggest a maintainable project infrastructure for a Playwright + Pytest framework, including conftest.py, reusable fixtures, authentication handling, CI and project documentation. Focus on architecture rather than implementation"
+**Response**: AI Agent proposed a project structure similar to my initial design, including reusable pytest fixtures, centralized configuration (pytest.ini), a dedicated conftest.py and project documentation. It also suggested a more advanced authentication mechanism based on Playwright's storage_state, where the user logs
+**My Decision**: I accepted the response and decided to add GitHub Actions. However, I have
+also decided not to proceed with storage_state idea since this specific task requires only
+three tests, performing a fresh login in each relevant test adds execution time and code
+becomes more complex.

@@ -24,7 +24,7 @@ class LoginPage(BasePage):
 
     def open(self) -> "LoginPage":
         "open the login page and wait till its ready."
-        self.page.goto(self.URL)
+        self.page.goto(self.url)
         expect(self.login_button).to_be_visible()
         return self
 
