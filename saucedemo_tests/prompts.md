@@ -26,14 +26,14 @@ becomes more complex.
 **My Decision/Resolution**: The issue was, in fact, correlated to misspeling "url" and using 
 "URL" everywhere, and also some other minor bugs like using non-relevant functions that work with my version of playwright. After that - all 3 passed.
 
-## Step   - debugging
-**Prompt**: "The tests fail even though the elements are visible in the browser and playwright reports that the locator cannot find the element. Help me identify whether the issue is related to the locator strategy, the application itself or the Playwright configuration. Explain the reasoning and where to look for the bug."
-**Response**: AI suggested verifying whether the application used Playwright's default data-testid attribute or a custom attribute - SauceDemo exposes testing hooks as data-test, while get_by_test_id() expects data-testid unless configured otherwise.
+## Step 3️⃣ - debugging
+**Prompt**: "The tests fail even though the elements are visible in the browser and playwright reports that the locator cannot find the element. Help me identify whether the issue is related to the locator strategy, the application itself or the Playwright configuration. Explain the reasoning and where to look for the bug."   
+**Response**: AI suggested verifying whether the application used Playwright's default data-testid attribute or a custom attribute - SauceDemo exposes testing hooks as data-test, while get_by_test_id() expects data-testid unless configured otherwise.     
 **My Decision**: AI was right, the bug was from my side. I implemented following line: 
 playwright.selectors.set_test_id_attribute("data-test")
 
-## Step  - when work was done
+## Step 4️⃣ - when work was done
 **Prompt**: "Please review my current logic and implementation. The tests are working fine,
-all 3 of them: e2e, data and negative (test for login). Focus on InventoryPage, CartPage and CheckoutPage - on maintainability, spelling, fluent usage, correct variable names, and whether the public API of each page is coherent. Please don't change the code, just give me some finishing touches tips"
-**Response**: Several improvements were suggested: ntroducing expect_*() methods for page verification, using @property for reusable locators, returning page objects from actions where appropriate (fluent interface), removing unused helper methods and keeping the framework intentionally lightweight instead of overengineering it.
-**My Decision**: I accepted most of the suggestions, including introducing expect_*() methods, improving naming consistency and simplifying the public API. However I rejected tips that included changing the code's logic significally (2+ files).
+all 3 of them: e2e, data and negative (test for login). Focus on InventoryPage, CartPage and CheckoutPage - on maintainability, spelling, fluent usage, correct variable names, and whether the public API of each page is coherent. Please don't change the code, just give me some finishing touches tips"   
+**Response**: Several improvements were suggested: itroducing expect_\*() methods for page verification, using @property for reusable locators, returning page objects from actions where appropriate (fluent interface), removing unused helper methods and keeping the framework intentionally lightweight instead of overengineering it.   
+**My Decision**: I accepted most of the suggestions, including introducing expect_*() methods, improving naming consistency and simplifying the public API. However I rejected tips that included changing the code's logic significally (2+ files).   
