@@ -35,7 +35,7 @@ playwright.selectors.set_test_id_attribute("data-test") <br>
 ## Step 4️⃣ - when work was done
 **Prompt**: "Please review my current logic and implementation. The tests are working fine,
 all 3 of them: e2e, data and negative (test for login). Focus on InventoryPage, CartPage and CheckoutPage - on maintainability, spelling, fluent usage, correct variable names, and whether the public API of each page is coherent. Please don't change the code, just give me some finishing touches tips" <br>
-**Response**: Several improvements were suggested: introducing expect_*() methods for page verification, using @property for reusable locators, returning page objects from actions where appropriate (fluent interface), removing unused helper methods and keeping the framework intentionally lightweight instead of overengineering it. <br>
+**Response**: Several improvements were suggested: introducing expect_\*() methods for page verification, using @property for reusable locators, returning page objects from actions where appropriate (fluent interface), removing unused helper methods and keeping the framework intentionally lightweight instead of overengineering it. <br>
 **My Decision**: I accepted most of the suggestions, including introducing expect_*() methods, improving naming consistency and simplifying the public API. However I rejected tips that included changing the code's logic significantly (2+ files).
 
 ## Step 5️⃣ - final clean-up and architecture review
