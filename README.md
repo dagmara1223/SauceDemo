@@ -83,16 +83,16 @@ Three tests, three different **kinds of risk**. The reasoning behind that choice
 
 ```
 saucedemo_tests/
-├── layouts/ # page objects, all locators live here
+├── layouts/                # page objects, all locators live here
 │   ├── base_layout.py
 │   ├── login_layout.py
 │   ├── inventory_layout.py
 │   ├── cart_layout.py
 │   └── checkout_layout.py
-├── data/ # test data: users, products
-├── tests/ # assertions only
-├── conftest.py # shared fixtures (page objects + logged_in)
-├── pytest.ini # base URL, markers, artifacts on failure
+├── data/                   # test data: users, products
+├── tests/                  # assertions only
+├── conftest.py             # shared fixtures (page objects + logged_in)
+├── pytest.ini              # base URL, markers, artifacts on failure
 ├── requirements.txt
 ├── prompts.md
 └── approach.md
