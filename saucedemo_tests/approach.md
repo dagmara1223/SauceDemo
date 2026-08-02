@@ -28,6 +28,15 @@ Authentication is a separate logged_in fixture, not something hidden inside the 
 ### Working with AI: 
 The full log is in [prompts.md](https://github.com/dagmara1223/SauceDemo/blob/main/saucedemo_tests/prompts.md). My workflow was: decide the strategy myself, let the model do the scaffolding, then review everything and automate, enhance. The model was clearly **strongest💪** at structure - project layout, fixtures, CI, naming conventions. It was **weakest🪫** wherever the answer depended on the running application: the biggest bug I hit was generated code using get_by_test_id(), which looks correct but expects data-testid, while SauceDemo exposes data-test. The code could never have worked, and it was written with complete confidence. After that I verified every locator against the live site instead of trusting them. <br>
 
+### Metrics: 
+| Metric | Result |
+| --- | --- |
+| Test functions / test cases | 3 / 8 (parametrized) |
+| Suite runtime (Chromium, headless) | ~12 s |
+| Flakiness - 10 consecutive runs | 80 / 80 passed (119.85 s) |
+| Slowest test | e2e purchase journey - 6.75 s |
+| Setup cost of UI login | ~1.6 s per test, ~6.5 s across the suite |
+
 ### Limitations and next steps: 
 1. Only three scenarios (tests): no coverage of the slide menu, product detail pages, checkout form validation or session expiry. <br>
 2. The broken accounts (problem_user, error_user, visual_user) are the natural next step - a second suite that asserts those accounts fail would turn this into a defect detector, not only a regression net.  <br>
