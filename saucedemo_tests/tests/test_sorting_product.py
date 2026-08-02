@@ -11,6 +11,7 @@ SORTING_OPTIONS = [
 @pytest.mark.data
 @pytest.mark.parametrize("option, field, reverse", SORTING_OPTIONS)
 def test_sorting_orders_the_product_list(
+    logged_in,
     inventory_page,
     option,
     field,
