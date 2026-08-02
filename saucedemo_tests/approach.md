@@ -1,5 +1,5 @@
-### Approach
-## Choosing the three tests
+## Approach
+### Choosing the three tests
 Task allowed three tests, so I decided to test three different kinds of risk:
 
 1. Negative login - marked as:
@@ -17,6 +17,13 @@ I additionally focused on the money part: I collected the prices displayed on th
 **Source:** [test_checkout.py](https://github.com/dagmara1223/SauceDemo/blob/main/saucedemo_tests/tests/test_checkout.py) <br>
 
 
-My first instinct was to test hamburger slide menu, but after confirming that it was mostly navigation - four links, four times the same kind of assertion, I decided **not** to. I chose to test sorting items instead, to verify that the application processes data correctly. For the same reason I did not build tests on problem_user, error_user or visual_user. They are broken by design, and the task requires tests that pass - a green test on a broken account means encoding current breakage as the expected result.
+My first instinct was to test hamburger slide menu, but after confirming that it was mostly navigation - four links, four times the same kind of assertion, I decided **not** to. I chose to test sorting items instead, to verify that the application processes data correctly. For the same reason I did not build tests on problem_user, error_user or visual_user. They are broken by design, and the task requires tests that pass - a green test on a broken account means encoding current breakage as the expected result. ✅
 
+### Structure 
+<img width="313" height="800" alt="image" src="https://github.com/user-attachments/assets/1d02ec16-7cd4-4589-84f3-e6b4addd4f65" />
+Page objects live in layouts/ and inherit from BasePage, test data (users, products) lives in data/, and tests/ contains assertions only. Every locator uses the application's own data-test hooks, so no XPath and no selectors coupled to styling. There is no sleep() anywhere - all waiting is done through Playwright's expect(), for example add_to_cart() waits for the button to change into "Remove", which is a real signal that the state changed.
+
+Authentication is a separate logged_in fixture, not something hidden inside the page object fixtures. Tests that only need a session ask for it explicitly in their signature, while the e2e test performs the login in its own body - there the login is part of the scenario being tested, not setup. ✅ 
+
+### Working with AI: 
 
