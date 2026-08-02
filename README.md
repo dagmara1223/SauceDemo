@@ -51,11 +51,17 @@ pytest
 
 ```bash
 pytest  # all 3 tests (8 cases)
-pytest --headed # watch the browser do the work
 pytest -m e2e  # the whole purchase flow/journey
 pytest -m negative # login rejection cases
 pytest -m data # sorting checks
 pytest --durations=0 # timing of every test
+```
+
+If You want to see the browser doing the work use following flags: <br>
+```
+pytest -m e2e --headed
+pytest -m negative --headed
+pytest -m data --headed
 ```
 
 Markers are registered in `pytest.ini`, so `--strict-markers` will catch a typo instead of silently skipping a test.
