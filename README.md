@@ -2,7 +2,7 @@
 Three automated tests for [saucedemo.com](https://www.saucedemo.com/) written using: 
 - Python 🐍
 - pytest 📝
-- Playwright 📱 <br>          
+- Playwright 📱<br>          
 and built with AI Assistance. Purpose: Recruitment task. 
 
 
