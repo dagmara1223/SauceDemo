@@ -27,8 +27,8 @@ three tests - performing a fresh login in each relevant test costs little execut
 playwright.selectors.set_test_id_attribute("data-test") <br>
 
 ## Step 3️⃣ - debugging: naming
-**Prompt**: "Test login negative still fails after fixing the locators. Help me identify the root cause - why is it failing? Explain what should be verified first and whether the problem seems to be correlated to a bug in the test or rather in the login page."
-**Response**: AI Agent suggested a path that helped me with the debugging. It identified several possible causes, including incorrect page locators, project import structure, inconsistent naming introduced during refactoring (URL vs url) and finally incorrect expected assertion values.
+**Prompt**: "Test login negative still fails after fixing the locators. Help me identify the root cause - why is it failing? Explain what should be verified first and whether the problem seems to be correlated to a bug in the test or rather in the login page." <br>
+**Response**: AI Agent suggested a path that helped me with the debugging. It identified several possible causes, including incorrect page locators, project import structure, inconsistent naming introduced during refactoring (URL vs url) and finally incorrect expected assertion values. <br>
 **My Decision/Resolution**: The issue was, in fact, correlated to misspelling "url" and using
 "URL" everywhere, plus a mismatch between the method names I had renamed in LoginPage and the names still called in the test. After that - all 3 passed.
 
