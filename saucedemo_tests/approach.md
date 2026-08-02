@@ -32,10 +32,10 @@ The full log is in [prompts.md](https://github.com/dagmara1223/SauceDemo/blob/ma
 | Metric | Result |
 | --- | --- |
 | Test functions / test cases | 3 / 8 (parametrized) |
-| Suite runtime (Chromium, headless) | ~12 s |
+| Suite runtime (Chromium, headless) | 30.33 s |
 | Flakiness - 10 consecutive runs | 80 / 80 passed (119.85 s) |
 | Slowest test | e2e purchase journey - 6.75 s |
-| Setup cost of UI login | ~1.6 s per test, ~6.5 s across the suite |
+| Setup cost of UI login | ~1.6 s per test |
 
 ### Limitations and next steps: 
 1. Only three scenarios (tests): no coverage of the slide menu, product detail pages, checkout form validation or session expiry. <br>
