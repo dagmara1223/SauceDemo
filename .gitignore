@@ -1,1 +1,10 @@
 text.txt
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+test-results/
+.env
+.DS_Store
+.idea/
+.vscode/
