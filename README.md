@@ -107,7 +107,3 @@ saucedemo_tests/
 Every locator uses the application's own `data-test` hooks, and there is also no `sleep()` anywhere - all waiting goes through Playwright's `expect()`. 
 
 ---
-
-## CI
-
-The suite runs on GitHub Actions on every push, against the live site. Screenshots, videos and traces are uploaded as artifacts whenever a test fails.
