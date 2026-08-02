@@ -111,3 +111,10 @@ Every locator uses the application's own `data-test` hooks, and there is also no
 ## CI
 <img width="800" height="430" alt="image" src="https://github.com/user-attachments/assets/bda6ee50-2432-40e0-a57e-8cf7ea576fc2" /> <br>
 The suite runs on GitHub Actions on every push, against the live site. Screenshots, videos and traces are uploaded as artifacts whenever a test fails. 
+
+
+A GitHub Actions workflow automatically:
+- installs Python dependencies, <br>
+- installs Chromium for Playwright, <br>
+- runs the test suite with `pytest`, <br>
+- uploads test artifacts on failure. <br>
